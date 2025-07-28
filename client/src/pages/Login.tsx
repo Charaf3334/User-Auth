@@ -22,7 +22,7 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const [test, setTest] = useState(false)
 
-  const onSubmitHandler = async (e: any) => {
+  const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
       
       setTest(true)
@@ -106,7 +106,8 @@ const Login = () => {
           {state === 'Sign up' && (
             <div className='mb-4 w-full px-5 py-2.5 rounded-full bg-blue-50 border border-blue-300'>
             <input
-              onChange={e => setName(e.target.value)} value={name}
+              onChange={e => setName(e.target.value)}
+              value={name}
               className='bg-transparent outline-none text-blue-900 placeholder:text-blue-400 w-full'
               type='text'
               placeholder='Full Name'
