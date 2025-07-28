@@ -64,7 +64,7 @@ const EmailVerify = () => {
       const otpString = otpArray.join('')
       console.log(otpString)
 
-      const {data} = await axios.post(backendUrl + '/api/auth/verify-account', {otp: otpString}, {withCredentials: true})
+      const {data} = await axios.post(backendUrl + '/api/auth/verify-account', {otp: otpString})
       
       if (data.success) {
         toast.success(data.message)
