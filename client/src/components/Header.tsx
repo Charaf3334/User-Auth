@@ -1,12 +1,15 @@
 import React, { useContext } from 'react'
 import assets from '../assets/assets'
 import { AppContext } from '../context/AppContext'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
 
   const context = useContext(AppContext)
   if (!context)
     throw new Error('AppContext is not provided')
+
+  const navigate = useNavigate()
 
   const {userData} = context
 

@@ -98,7 +98,7 @@ const EmailVerify = () => {
               <input type="text" maxLength={1} key={index} required 
               className='w-12 h-12 bg-blue-200 outline-none text-blue-900 text-center text-xl rounded-md'
               ref={(e) => {
-                inputRefs.current[index] = e;
+                inputRefs.current[index] = e
               }}
               onInput={(e) => handleInput(e, index)}
               onKeyDown={(e) => handleDeleteInput(e, index)}

@@ -159,9 +159,8 @@ export const sendVerifyOtp = async (req, res) => {
 
 // handle verifying email using OTP
 export const verifyEmail = async (req, res) => {
+    
     const {userId, otp} = req.body
-
-    console.log(`${otp}, ${userId}`)
 
     if (!userId || !otp)
         return res.json({success: false, message: 'Missing details'})
@@ -218,9 +217,8 @@ export const sendResetOtp = async (req, res) => {
         const user = await userModel.findOne({email})
         
         if (!user)
-           return res.json({success: false, message: 'User not found'})
+           return res.json({success: false, message: 'No account is associated with this email address'})
 
-        
         const otp = String(Math.floor(100000 + Math.random() * 900000)) // line that generate a 6 digit random number
 
         user.resetOtp = otp
